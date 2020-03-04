@@ -23,5 +23,9 @@ module.exports = {
       "webpack-cli",
       "webpack-dev-server"
     ]
+  },
+  server: {
+    stnd: ["concurrently", "express", "nodemon"],
+    dev: []
   }
 };
