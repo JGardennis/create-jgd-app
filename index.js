@@ -21,24 +21,12 @@ if (fs.existsSync(appDir)) {
   return;
 }
 
+// Create root app directory
 fs.mkdirSync(appDir);
-
 shell.cd(appDir);
 
-// Build client-side folders & files
-fs.mkdirSync(`${clientDir}`);
-fs.mkdirSync(`${clientDir}/src`);
-fs.mkdirSync(`${clientDir}/src/components`);
-fs.mkdirSync(`${clientDir}/src/reducers`);
-fs.writeFileSync(`${clientDir}/package.json`, templates.packageJson(appName));
-fs.writeFileSync(`${clientDir}/index.html`, templates.indexHtml(appName));
-fs.writeFileSync(`${clientDir}/src/index.jsx`, templates.indexJsx);
-fs.writeFileSync(`${clientDir}/.babelrc`, templates.babelRc);
-
-// Build server-side folders & files
-fs.mkdirSync(`${serverDir}`);
-fs.writeFileSync(`${serverDir}/package.json`, templates.packageJson(appName));
-fs.mkdirSync(`${serverDir}/routes`);
+// Handler templates
+require("./handlers/templateHandler")(appName, clientDir, serverDir);
 
 // Handle packages
 require("./handlers/packageHandler");
