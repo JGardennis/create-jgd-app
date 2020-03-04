@@ -1,4 +1,5 @@
 module.exports = {
   packageJson: require("./package-json"),
-  indexHtml: require("./index-html")
+  indexHtml: require("./client-side/index-html"),
+  indexJsx: require("./client-side/index-jsx")
 };

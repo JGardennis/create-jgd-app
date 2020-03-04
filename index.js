@@ -29,8 +29,10 @@ shell.cd(appDir);
 fs.mkdirSync(`${clientDir}`);
 fs.mkdirSync(`${clientDir}/src`);
 fs.mkdirSync(`${clientDir}/src/components`);
+fs.mkdirSync(`${clientDir}/src/reducers`);
 fs.writeFileSync(`${clientDir}/package.json`, templates.packageJson(appName));
 fs.writeFileSync(`${clientDir}/index.html`, templates.indexHtml(appName));
+fs.writeFileSync(`${clientDir}/src/index.jsx`, templates.indexJsx);
 
 // Build server-side folders & files
 fs.mkdirSync(`${serverDir}`);
