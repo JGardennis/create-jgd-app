@@ -4,6 +4,7 @@ require("colors");
 // Imports
 const shell = require("shelljs");
 const fs = require("fs");
+const templates = require("./templates");
 
 const appName = process.argv[2];
 const appDir = `${process.cwd()}/${appName}`;
@@ -19,3 +20,12 @@ if (fs.existsSync(appDir)) {
   console.log(`Directory ${appDir} already exists`.red);
   return;
 }
+
+fs.mkdirSync(appDir);
+
+shell.cd(appDir);
+
+// Build client-side folders & files
+fs.mkdirSync(`${clientDir}`);
+fs.mkdirSync(`${clientDir}/src`);
+fs.mkdirSync(`${clientDir}/src/components`);
