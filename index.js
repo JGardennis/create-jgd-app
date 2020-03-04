@@ -33,6 +33,7 @@ fs.mkdirSync(`${clientDir}/src/reducers`);
 fs.writeFileSync(`${clientDir}/package.json`, templates.packageJson(appName));
 fs.writeFileSync(`${clientDir}/index.html`, templates.indexHtml(appName));
 fs.writeFileSync(`${clientDir}/src/index.jsx`, templates.indexJsx);
+fs.writeFileSync(`${clientDir}/.babelrc`, templates.babelRc);
 
 // Build server-side folders & files
 fs.mkdirSync(`${serverDir}`);
