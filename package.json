@@ -1,0 +1,21 @@
+{
+  "name": "create-fs-app",
+  "version": "1.0.0",
+  "description": "A custom CLI tool to help setup an empty (starting point) full stack web app",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JGardennis/create-fs-app.git"
+  },
+  "keywords": [],
+  "author": "Joshua Dennis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JGardennis/create-fs-app/issues"
+  },
+  "homepage": "https://github.com/JGardennis/create-fs-app#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "shelljs": "^0.8.3"
+  }
+}
