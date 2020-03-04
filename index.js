@@ -34,6 +34,7 @@ fs.writeFileSync(`${clientDir}/index.html`, templates.indexHtml(appName));
 
 // Build server-side folders & files
 fs.mkdirSync(`${serverDir}`);
+fs.writeFileSync(`${serverDir}/package.json`, templates.packageJson(appName));
 fs.mkdirSync(`${serverDir}/routes`);
 
 // Handle packages
