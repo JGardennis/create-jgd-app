@@ -29,3 +29,12 @@ shell.cd(appDir);
 fs.mkdirSync(`${clientDir}`);
 fs.mkdirSync(`${clientDir}/src`);
 fs.mkdirSync(`${clientDir}/src/components`);
+fs.writeFileSync(`${clientDir}/package.json`, templates.packageJson(appName));
+fs.writeFileSync(`${clientDir}/index.html`, templates.indexHtml(appName));
+
+// Build server-side folders & files
+fs.mkdirSync(`${serverDir}`);
+fs.mkdirSync(`${serverDir}/routes`);
+
+// Handle packages
+require("./handlers/packageHandler");
