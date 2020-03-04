@@ -12,7 +12,7 @@ module.exports = {
       filename: "bundle.js"
     },
     devServer: {
-        contentBase: "./build"
+        contentBase: "./build",
         historyApiFallback: true
     },
     module: {

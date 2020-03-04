@@ -23,6 +23,7 @@ module.exports = (appName, clientDir, serverDir) => {
   fs.writeFileSync(`${clientDir}/index.html`, templates.indexHtml(appName));
   fs.writeFileSync(`${clientDir}/src/index.jsx`, templates.indexJsx);
   fs.writeFileSync(`${clientDir}/.babelrc`, templates.babelRc);
+  fs.writeFileSync(`${clientDir}/webpack.config.js`, templates.webpack);
 
   // Build server-side folders
   fs.mkdirSync(`${serverDir}`);
