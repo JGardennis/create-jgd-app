@@ -3,5 +3,6 @@ module.exports = {
   indexHtml: require("./client-side/index-html"),
   indexJsx: require("./client-side/index-jsx"),
   babelRc: require("./client-side/babel"),
-  webpack: require("./client-side/webpack")
+  webpack: require("./client-side/webpack"),
+  eslint: require("./client-side/eslint")
 };

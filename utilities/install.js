@@ -1,7 +1,7 @@
 const shell = require("shelljs");
 const Loader = require("../utilities/Loader");
 
-module.exports = (str, callback, isDev) => {
+module.exports = (str, isDev, callback) => {
   return new Promise(resolve => {
     let loader = new Loader("Installing", str);
     loader.load();

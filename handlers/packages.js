@@ -19,7 +19,12 @@ module.exports = {
     { name: "style-loader", dev: true },
     { name: "webpack", dev: true },
     { name: "webpack-cli", dev: true },
-    { name: "webpack-dev-server", dev: true }
+    { name: "webpack-dev-server", dev: true },
+    { name: "eslint", dev: true },
+    { name: "eslint-loader", dev: true },
+    { name: "babel-eslint", dev: true },
+    { name: "eslint-config-react", dev: true },
+    { name: "eslint-plugin-react", dev: true }
   ],
   server: [
     { name: "concurrently" },

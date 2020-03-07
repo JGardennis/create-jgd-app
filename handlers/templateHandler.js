@@ -21,12 +21,14 @@ module.exports = (appName, appDir) => {
   // Build client-side files
   buildPackageJson(clientDir, [
     { start: "webpack-dev-server --mode development" },
-    { build: "webpack --mode production" }
+    { build: "webpack --mode production" },
+    { lint: 'eslint --fix "src/**/*.[js|jsx]"' }
   ]);
 
   fs.writeFileSync(`${clientDir}/index.html`, templates.indexHtml(appName));
   fs.writeFileSync(`${clientDir}/src/index.jsx`, templates.indexJsx);
   fs.writeFileSync(`${clientDir}/.babelrc`, templates.babelRc);
+  fs.writeFileSync(`${clientDir}/.eslintrc`, templates.eslint);
   fs.writeFileSync(`${clientDir}/webpack.config.js`, templates.webpack);
 
   // Build server-side folders
