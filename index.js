@@ -4,12 +4,9 @@ require("colors");
 // Imports
 const shell = require("shelljs");
 const fs = require("fs");
-const templates = require("./templates");
 
 const appName = process.argv[2];
 const appDir = `${process.cwd()}/${appName}`;
-const clientDir = `${appDir}/client`;
-const serverDir = `${appDir}/server`;
 
 if (!appName) {
   console.log("No app name given".red);
@@ -21,12 +18,12 @@ if (fs.existsSync(appDir)) {
   return;
 }
 
-// Create root app directory
+// Create root app directoryk
 fs.mkdirSync(appDir);
 shell.cd(appDir);
 
 // Handler templates
-require("./handlers/templateHandler")(appName, clientDir, serverDir);
+require("./handlers/templateHandler")(appName, appDir);
 
 // Handle packages
 require("./handlers/packageHandler");

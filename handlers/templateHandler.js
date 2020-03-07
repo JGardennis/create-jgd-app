@@ -1,7 +1,17 @@
 const fs = require("fs");
 const templates = require("../templates");
 
-module.exports = (appName, clientDir, serverDir) => {
+module.exports = (appName, appDir) => {
+  function buildPackageJson(dir, scripts) {
+    fs.writeFileSync(
+      `${dir}/package.json`,
+      templates.packageJson({ name: appName, scripts: scripts })
+    );
+  }
+
+  const clientDir = `${appDir}/client`;
+  const serverDir = `${appDir}/server`;
+
   // Build client-side folders
   fs.mkdirSync(`${clientDir}`);
   fs.mkdirSync(`${clientDir}/src`);
@@ -9,16 +19,10 @@ module.exports = (appName, clientDir, serverDir) => {
   fs.mkdirSync(`${clientDir}/src/reducers`);
 
   // Build client-side files
-  fs.writeFileSync(
-    `${clientDir}/package.json`,
-    templates.packageJson({
-      name: appName,
-      scripts: [
-        { start: "webpack-dev-server --mode development" },
-        { build: "webpack --mode production" }
-      ]
-    })
-  );
+  buildPackageJson(clientDir, [
+    { start: "webpack-dev-server --mode development" },
+    { build: "webpack --mode production" }
+  ]);
 
   fs.writeFileSync(`${clientDir}/index.html`, templates.indexHtml(appName));
   fs.writeFileSync(`${clientDir}/src/index.jsx`, templates.indexJsx);
@@ -30,14 +34,8 @@ module.exports = (appName, clientDir, serverDir) => {
   fs.mkdirSync(`${serverDir}/routes`);
 
   // Build server-side files
-  fs.writeFileSync(
-    `${serverDir}/package.json`,
-    templates.packageJson({
-      name: appName,
-      scripts: [
-        { start: "nodemon index.js" },
-        { dev: 'concurrently "npm run start" "npm run start --prefix client"' }
-      ]
-    })
-  );
+  buildPackageJson(serverDir, [
+    { start: "nodemon index.js" },
+    { dev: 'concurrently "npm run start" "npm run start --prefix client"' }
+  ]);
 };
