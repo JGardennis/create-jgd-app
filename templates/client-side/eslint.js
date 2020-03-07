@@ -10,5 +10,8 @@ module.exports = `
         "react": {
             "version": "detect"
         }
+    },
+    "rules": {
+        "indent": ["error", 2]
     }
 }`;
