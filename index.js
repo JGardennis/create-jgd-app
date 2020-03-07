@@ -25,8 +25,5 @@ shell.cd(appDir);
 // Handle templates
 require("./handlers/templateHandler")(appName, appDir);
 
-// Format files
-require("./handlers/formatHandler");
-
 // Handle packages
 require("./handlers/packageHandler");
