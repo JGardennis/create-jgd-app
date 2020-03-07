@@ -17,5 +17,8 @@
   "dependencies": {
     "cli-color": "^2.0.0",
     "shelljs": "^0.8.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
