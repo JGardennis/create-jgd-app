@@ -8,7 +8,7 @@ installPackages = async () => {
     shell.cd(dir);
     for (pkg in packages[dir]) {
       let package = packages[dir][pkg];
-      let loader = new Loader(package.name, "Installing");
+      let loader = new Loader("Installing", package.name);
       loader.load();
       await new Promise(resolve => {
         shell.exec(

@@ -1,9 +1,9 @@
 const clc = require("cli-color");
 
 module.exports = class Loader {
-  constructor(file, action) {
-    this.file = file;
-    this.action = action;
+  constructor(msg, file) {
+    this.message = msg;
+    this.file = file || "";
     this.interval = null;
   }
 
@@ -12,7 +12,7 @@ module.exports = class Loader {
     let x = 0;
     this.interval = setInterval(() => {
       process.stdout.write(
-        `\r ${clc.cyan(this.action)} ${this.file} ${chars[x++]}`
+        `\r ${clc.cyan(this.message)} ${this.file} ${chars[x++]}`
       );
       x &= 3;
     }, 250);
