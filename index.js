@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-require("colors");
+const clc = require("cli-color");
 
 // Imports
 const shell = require("shelljs");
@@ -9,20 +9,20 @@ const appName = process.argv[2];
 const appDir = `${process.cwd()}/${appName}`;
 
 if (!appName) {
-  console.log("No app name given".red);
+  console.log(clc.red("No app name given"));
   return;
 }
 
 if (fs.existsSync(appDir)) {
-  console.log(`Directory ${appDir} already exists`.red);
+  console.log(clc.red(`Directory ${appDir} already exists`));
   return;
 }
 
-// Create root app directoryk
+// Create root app directory
 fs.mkdirSync(appDir);
 shell.cd(appDir);
 
-// Handler templates
+// Handle templates
 require("./handlers/templateHandler")(appName, appDir);
 
 // Handle packages

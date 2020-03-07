@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/JGardennis/create-fs-app#readme",
   "dependencies": {
-    "colors": "^1.4.0",
+    "cli-color": "^2.0.0",
     "shelljs": "^0.8.3"
   }
 }

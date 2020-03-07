@@ -1,31 +1,30 @@
 module.exports = {
-  client: {
-    stnd: [
-      "react",
-      "react-dom",
-      "react-redux",
-      "redux",
-      "react-router-dom",
-      "http-proxy-middleware"
-    ],
-    dev: [
-      "@babel/core",
-      "@babel/preset-env",
-      "@babel/preset-react",
-      "babel-loader",
-      "css-loader",
-      "html-webpack-plugin",
-      "mini-css-extract-plugin",
-      "node-sass",
-      "sass-loader",
-      "style-loader",
-      "webpack",
-      "webpack-cli",
-      "webpack-dev-server"
-    ]
-  },
-  server: {
-    stnd: ["concurrently", "express", "nodemon"],
-    dev: []
-  }
+  client: [
+    { name: "react" },
+    { name: "react-dom" },
+    { name: "react-redux" },
+    { name: "redux" },
+    { name: "react-router-dom" },
+    { name: "http-proxy-middleware" },
+    { name: "prettier" },
+    { name: "@babel/core", dev: true },
+    { name: "@babel/preset-env", dev: true },
+    { name: "@babel/preset-react", dev: true },
+    { name: "babel-loader", dev: true },
+    { name: "css-loader", dev: true },
+    { name: "html-webpack-plugin", dev: true },
+    { name: "mini-css-extract-plugin", dev: true },
+    { name: "node-sass", dev: true },
+    { name: "sass-loader", dev: true },
+    { name: "style-loader", dev: true },
+    { name: "webpack", dev: true },
+    { name: "webpack-cli", dev: true },
+    { name: "webpack-dev-server", dev: true }
+  ],
+  server: [
+    { name: "concurrently" },
+    { name: "express" },
+    { name: "nodemon" },
+    { name: "prettier" }
+  ]
 };

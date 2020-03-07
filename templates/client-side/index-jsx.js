@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 
-const store = createStore(() => {}, {}, applyMiddleWare());
+const store = createStore(() => {}, {}, applyMiddleware());
 
 ReactDOM.render(
     <Provider store={store}>

@@ -1,25 +1,28 @@
 const shell = require("shelljs");
 const packages = require("./packages");
 
-const install = (pkgs, dev) => {
-  return new Promise(resolve => {
-    shell.exec(`npm install --save${dev && "-dev"} ${pkgs.join(" ")}`, () => {
-      resolve();
-    });
-  });
+const Loader = require("../utilities/Loader");
+
+installPackages = async () => {
+  for (let dir in packages) {
+    shell.cd(dir);
+    for (pkg in packages[dir]) {
+      let package = packages[dir][pkg];
+      let loader = new Loader(package.name, "Installing");
+      loader.load();
+      await new Promise(resolve => {
+        shell.exec(
+          `npm install --save${package.dev && "-dev"} ${package.name}`,
+          { silent: true },
+          () => {
+            loader.done();
+            resolve();
+          }
+        );
+      });
+    }
+    shell.cd("..");
+  }
 };
 
-const installPackages = async (dir, name, pkgs) => {
-  shell.cd(dir);
-  console.log(`[${name} pkgs] INSTALLING`.cyan);
-  await Promise.all([install(pkgs.stnd, false), install(pkgs.dev, true)]);
-  console.log(`[${name} pkgs] DONE`.green);
-  shell.cd("..");
-};
-
-const start = async () => {
-  await installPackages("client", "client-side", packages.client);
-  await installPackages("server", "server-side", packages.server);
-};
-
-start();
+installPackages();
