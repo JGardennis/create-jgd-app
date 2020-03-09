@@ -27,7 +27,6 @@ module.exports = appDir => {
         fs.mkdirSync(`${appDir}/${dir}/${folder}`);
       }
       files[dir][folder].forEach(file => {
-        console.log(file);
         createFile(
           file,
           `${appDir}/${dir}${folder}`,

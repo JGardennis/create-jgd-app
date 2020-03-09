@@ -1,0 +1,37 @@
+{
+  "client": {
+    "standard": [
+      "react",
+      "react-dom",
+      "react-redux",
+      "redux",
+      "react-router-dom",
+      "http-proxy-middleware",
+      "prettier"
+    ],
+    "dev": [
+      "@babel/core",
+      "@babel/preset-env",
+      "@babel/preset-react",
+      "babel-loader",
+      "css-loader",
+      "html-webpack-plugin",
+      "mini-css-extract-plugin",
+      "node-sass",
+      "sass-loader",
+      "style-loader",
+      "webpack",
+      "webpack-cli",
+      "webpack-dev-server",
+      "eslint",
+      "eslint-loader",
+      "babel-eslint",
+      "eslint-config-react",
+      "eslint-plugin-react"
+    ]
+  },
+  "server": {
+    "standard": ["concurrently", "express", "nodemon", "prettier"],
+    "dev": []
+  }
+}

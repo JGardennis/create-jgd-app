@@ -26,4 +26,4 @@ shell.cd(appDir);
 require("./handlers/templateHandler")(appDir);
 
 // Handle packages
-// require("./handlers/packageHandler");
+require("./handlers/packageHandler");
