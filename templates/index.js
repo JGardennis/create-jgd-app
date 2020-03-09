@@ -1,8 +1,26 @@
 module.exports = {
-  packageJson: require("./package-json"),
-  indexHtml: require("./client-side/index-html"),
-  indexJsx: require("./client-side/index-jsx"),
-  babelRc: require("./client-side/babel"),
-  webpack: require("./client-side/webpack"),
-  eslint: require("./client-side/eslint")
+  packageJson: {
+    name: "package.json",
+    file: require("./main/package-json")
+  },
+  indexHtml: {
+    name: "index.html",
+    file: require("./main/index-html")
+  },
+  indexJsx: {
+    name: "index.jsx",
+    file: require("./main/index-jsx")
+  },
+  babelRc: {
+    name: ".babelrc",
+    file: require("./main/babel")
+  },
+  webpack: {
+    name: "webpack.config.js",
+    file: require("./main/webpack")
+  },
+  eslintRc: {
+    name: ".eslintrc",
+    file: require("./main/eslint")
+  }
 };

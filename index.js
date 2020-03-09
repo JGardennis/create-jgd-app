@@ -23,7 +23,7 @@ fs.mkdirSync(appDir);
 shell.cd(appDir);
 
 // Handle templates
-require("./handlers/templateHandler")(appName, appDir);
+require("./handlers/templateHandler")(appDir);
 
 // Handle packages
-require("./handlers/packageHandler");
+// require("./handlers/packageHandler");

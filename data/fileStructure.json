@@ -1,0 +1,11 @@
+{
+  "client": {
+    "/": ["indexHtml", "babelRc", "eslintRc", "webpack", "packageJson"],
+    "/src": ["indexJsx"],
+    "/src/components": []
+  },
+  "server": {
+    "/": ["packageJson"],
+    "/routes": []
+  }
+}
