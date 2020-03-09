@@ -1,4 +1,4 @@
-module.exports = dir => {
+module.exports = directory => {
   const scripts = {
     client: [
       { start: "webpack-dev-server --mode development" },
@@ -13,12 +13,12 @@ module.exports = dir => {
 
   return `
   {
-    "name": "${dir}",
+    "name": "${global.appName}-${directory}",
     "version": "1.0.0",
     "description": "An app built using create-fs-app",
     "main": "index.js",
     "scripts": {
-      ${scripts[dir].map((script, i) => {
+      ${scripts[directory].map((script, i) => {
         return `${JSON.stringify(script).replace(/[{}]/g, "")}`;
       })}
     },

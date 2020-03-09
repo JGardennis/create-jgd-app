@@ -1,8 +1,8 @@
-module.exports = appName => `
+module.exports = `
 <!DOCTYPE html>
 <html>
   <head>
-    <title>${appName}</title>
+    <title>${global.appName}</title>
   </head>
   <body>
     <div id="root"></div>
