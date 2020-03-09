@@ -1,6 +1,13 @@
 #!/usr/bin/env node
 const clc = require("cli-color");
 
+// Globals
+global.ft = { comp: "jsx", scr: "js" }; // file types to use
+global.pkgs = []; // extra packages to install, added by commands
+
+require("./handlers/commandHandler");
+return;
+
 // Imports
 const shell = require("shelljs");
 const fs = require("fs");
