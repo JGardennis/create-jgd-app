@@ -1,6 +1,6 @@
 {
   "name": "create-jgd-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A custom CLI tool to help setup an empty (starting point) full stack web app",
   "main": "index.js",
   "repository": {
