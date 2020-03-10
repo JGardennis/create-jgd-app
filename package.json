@@ -1,5 +1,5 @@
 {
-  "name": "create-fs-app",
+  "name": "create-jgd-app",
   "version": "1.0.0",
   "description": "A custom CLI tool to help setup an empty (starting point) full stack web app",
   "main": "index.js",
@@ -17,8 +17,5 @@
   "dependencies": {
     "cli-color": "^2.0.0",
     "shelljs": "^0.8.3"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
