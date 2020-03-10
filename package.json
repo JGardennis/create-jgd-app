@@ -5,15 +5,15 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JGardennis/create-fs-app.git"
+    "url": "git+https://github.com/JGardennis/create-jgd-app.git"
   },
   "keywords": [],
   "author": "Joshua Dennis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JGardennis/create-fs-app/issues"
+    "url": "https://github.com/JGardennis/create-jgd-app/issues"
   },
-  "homepage": "https://github.com/JGardennis/create-fs-app#readme",
+  "homepage": "https://github.com/JGardennis/create-jgd-app#readme",
   "dependencies": {
     "cli-color": "^2.0.0",
     "shelljs": "^0.8.3"
